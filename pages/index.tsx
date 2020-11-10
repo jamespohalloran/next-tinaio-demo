@@ -1,7 +1,7 @@
 
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import client from './client';
+import client from '../components/client';
 import { useForestryForm } from '@forestryio/client'
 import { DocumentUnion, Home_Data } from '../.tina/types'
 export default function Home(props) {

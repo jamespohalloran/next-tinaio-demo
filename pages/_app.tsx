@@ -2,7 +2,7 @@
 import '../styles/globals.css'
 import type { AppProps /*, AppContext */ } from 'next/app'
 import { withTina } from 'tinacms';
-import client from './client';
+import client from '../components/client';
 
 function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />
