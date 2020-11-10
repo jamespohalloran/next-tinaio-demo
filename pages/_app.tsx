@@ -1,6 +1,8 @@
 
 import '../styles/globals.css'
 import type { AppProps /*, AppContext */ } from 'next/app'
+import { withTina } from 'tinacms';
+import client from './client';
 
 function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />
@@ -18,4 +20,11 @@ function App({ Component, pageProps }: AppProps) {
 //   return { ...appProps }
 // }
 
-export default App
+export default withTina(App, {
+  apis: {
+    forestry: client,
+  },
+  sidebar: true,
+  enabled: true,
+});
+
