@@ -1150,13 +1150,13 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
-"@forestryio/cli@^0.2.23":
-  version "0.2.23"
-  resolved "https://registry.yarnpkg.com/@forestryio/cli/-/cli-0.2.23.tgz#040bac88d8b0b533f1a269bebf84a0d4409236e2"
-  integrity sha512-7dF+SI3ABYhBOyHIaIjDSci93ia+SKxcC09DGSTx+4/qRGALxAwunXZPUa4TSk2fq12WunT6X/RxuP01QRNzOA==
+"@forestryio/cli@^0.2.24":
+  version "0.2.24"
+  resolved "https://registry.yarnpkg.com/@forestryio/cli/-/cli-0.2.24.tgz#8e9e5695bcdd873a00b058623cbe3ca42cd5c0b9"
+  integrity sha512-zXSi/UMybu3ggMdldSYN77n/03eWBU1mlpZkrSGsieey7qTlfMhbsC3CAeWlyRYwn8p5GLcu+4xJ1GuThuuOQA==
   dependencies:
-    "@forestryio/gql" "0.0.29"
-    "@forestryio/graphql-helpers" "0.0.10"
+    "@forestryio/gql" "workspace:packages/gql"
+    "@forestryio/graphql-helpers" "workspace:packages/graphql-helpers"
     "@graphql-codegen/core" "^1.17.0"
     "@graphql-codegen/typescript" "^1.17.0"
     "@graphql-codegen/typescript-operations" "^1.17.0"
@@ -1227,7 +1227,7 @@
     tsup "^3.7.0"
     typescript "^3.9.5"
 
-"@forestryio/gql@0.0.29":
+"@forestryio/gql@workspace:packages/gql":
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@forestryio/gql/-/gql-0.0.29.tgz#49f849f2957d321a1b7b6c8430d56610d50c3fb6"
   integrity sha512-mVpZAouL10AWNdKC2XzHSUNcHrpR1nbHrr/FXqu0TZt6xKfRuWH+HgHijHVmoo98zaXv4kFH8wTO8yQh6FMtRQ==
@@ -1275,6 +1275,20 @@
   version "0.0.11"
   resolved "https://registry.yarnpkg.com/@forestryio/graphql-helpers/-/graphql-helpers-0.0.11.tgz#6ca229490e35c91ac6465b150a8cd800773762cd"
   integrity sha512-hN6C25woFJSGMJPYqMstKHwBEkH6XdFAiPvxiD0GB17nITg9q1SCKOd4aDLWBJNYbLsxaU87mUfZlLabKzYTyA==
+  dependencies:
+    "@types/lodash.kebabcase" "^4.1.6"
+    graphql "^15.3.0"
+    lodash.camelcase "^4.3.0"
+    lodash.kebabcase "^4.1.1"
+    lodash.snakecase "^4.1.1"
+    lodash.upperfirst "^4.3.1"
+    tslib "^1.11.1"
+    tsup "^3.7.0"
+
+"@forestryio/graphql-helpers@workspace:packages/graphql-helpers":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@forestryio/graphql-helpers/-/graphql-helpers-0.0.12.tgz#d4f6ee17564f61821bf53df29cddaabe4bdf871a"
+  integrity sha512-qFM2uyQ4bD9Kvt/TGshFRxDWRvBn6fRoGVKv1u7vyDOPCcpEhz8JyLFw99xlwtT8pvAT9Q7McUOxwfJF/aU5Rg==
   dependencies:
     "@types/lodash.kebabcase" "^4.1.6"
     graphql "^15.3.0"
