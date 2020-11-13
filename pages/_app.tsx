@@ -3,9 +3,16 @@ import '../styles/globals.css'
 import type { AppProps /*, AppContext */ } from 'next/app'
 import { withTina } from 'tinacms';
 import client from '../components/client';
+import React from 'react';
+import { TinacmsForestryProvider } from '@forestryio/client';
 
 function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  
+  return <TinacmsForestryProvider
+  onLogin={() => alert("enter edit mode")}
+  onLogout={() => alert("exit edit mode")}
+><Component {...pageProps} />
+</TinacmsForestryProvider>
 }
 
 // Only uncomment this method if you have blocking data requirements for
