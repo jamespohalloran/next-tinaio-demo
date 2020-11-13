@@ -4,12 +4,12 @@ import styles from '../styles/Home.module.css'
 import client from '../components/client';
 import { useForestryForm, useTinaAuthRedirect } from '@forestryio/client'
 import { DocumentUnion, Home_Data } from '../.tina/types'
+import { tryGetPreviewData } from 'next/dist/next-server/server/api-utils';
 export default function Home(props) {
 
   useTinaAuthRedirect();
 
-  const data = useForestryForm<Home_Data>(props);
-
+  const data = props.preview ? useForestryForm<Home_Data>(props) : props.document.node.data ;
   return (
     <div className={styles.container}>
       <Head>
@@ -72,11 +72,14 @@ export default function Home(props) {
   )
 }
 
-export const getStaticProps = async (props) => {
+export const getStaticProps = async (props: {preview: boolean, previewData: { tinaio_token: string}}) => {
+  
   const relativePath = `home.md`;
   const section = 'pages';
 
-  const content = await client.getContentForSection<DocumentUnion>({
+  console.log(props)
+  
+  const content = await client(props.preview, () => props.previewData?.tinaio_token || "").getContentForSection<DocumentUnion>({
     relativePath,
     section,
   })
@@ -84,5 +87,6 @@ export const getStaticProps = async (props) => {
     props: {...content,
     relativePath,
     section,
+    preview: !!props.preview
   }}
 };
