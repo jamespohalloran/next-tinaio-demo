@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "next-dev": "next dev",
+    "dev": "yarn tina-gql server:start -c \"yarn next-dev\"",
     "next-build": "next build",
     "start": "next start",
     "build": "yarn tina-gql server:start -c \"yarn next-build\""
@@ -22,12 +23,5 @@
     "styled-components": "^5.2.1",
     "tinacms": "^0.32.0",
     "typescript": "^4.0.5"
-  },
-  "resolutions": {
-    "@forestryio/cli": "portal:/Users/jamesohalloran/Documents/forestry/graphql-demo/packages/cli",
-    "@forestryio/client": "portal:/Users/jamesohalloran/Documents/forestry/graphql-demo/packages/client",
-    "forestry-schema": "portal:/Users/jamesohalloran/Documents/forestry/graphql-demo/packages/forestry-schema-extension",
-    "@forestryio/gql": "portal:/Users/jamesohalloran/Documents/forestry/graphql-demo/packages/gql",
-    "@forestryio/graphql-helpers": "portal:/Users/jamesohalloran/Documents/forestry/graphql-demo/packages/graphql-helpers"
   }
 }
