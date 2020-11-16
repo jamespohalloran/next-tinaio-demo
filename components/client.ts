@@ -1,9 +1,9 @@
 import { ForestryClient } from "@forestryio/client";
 
-export default (preview: boolean, getTokenFn?: () => string) => new ForestryClient("e0a42c05-26b6-41d4-9c80-f62c829aabd7", {
-  gqlServer: preview ? `https://content.tinajs.dev/github/awko/e0a42c05-26b6-41d4-9c80-f62c829aabd7` : `http://localhost:4001/graphql`,
+export default (preview: boolean, getTokenFn?: () => string) => new ForestryClient(process.env.NEXT_PUBLIC_TINA_CLIENT_ID, {
+  gqlServer: preview ? `https://content.tinajs.dev/github/${process.env.NEXT_PUBLIC_REALM_NAME}/${process.env.NEXT_PUBLIC_TINA_CLIENT_ID}` : `http://localhost:4001/graphql`,
   oauthHost: 'https://hydra.tinajs.dev:4444',
   identityHost: '/api/proxy',
-  redirectURI: 'http://localhost:3000/',
+  redirectURI: process.env.NEXT_PUBLIC_HOMEPAGE_URL || "http://localhost:3000/",
   getTokenFn
 });

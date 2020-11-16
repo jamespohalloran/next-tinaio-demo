@@ -1,5 +1,18 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-typescript-app`](https://www.npmjs.com/package/create-next-typescript-app).
 
+## Environment Configuration
+
+The following values will need to be set in your repo's `.env.local`
+
+```
+NEXT_PUBLIC_HOMEPAGE_URL=http://localhost:3000/
+NEXT_PUBLIC_REALM_NAME=awko
+NEXT_PUBLIC_TINA_CLIENT_ID=e0a42c05-26b6-41d4-9c80-f62c829aabd7
+```
+
+`NEXT_PUBLIC_REALM_NAME` & `NEXT_PUBLIC_TINA_CLIENT_ID` can be retrieved by creating a realm/app within
+[Tina.io](https://auth.tinajs.dev/signin)
+
 ## Getting Started
 
 First, install the dependencies:
@@ -20,7 +33,7 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 ## Tina.io
 
-To enter edit-mode on this site, you can login through [/login](http://localhost:3000/login). Once you are logged in, any content from the [site root](http://localhost:3000/)'s content will be loaded from Tina.io. 
+To enter edit-mode on this site, you can login through [/login](http://localhost:3000/login). Once you are logged in, any content from the [site root](http://localhost:3000/)'s content will be loaded from Tina.io.
 The tina sidebar will also be visible. Any changes that are saved will go through Tina.io's API and create a new commit.
 
 ## What's happening under the hood?
