@@ -21,10 +21,10 @@ export default function Home(props) {
           {data.title}
         </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        {!props.preview && <p className={styles.description}>
+          To make edits to site, sign in{' '}
+          <a href={"/login"}>here</a>
+        </p> }
 
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>

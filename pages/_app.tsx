@@ -16,12 +16,15 @@ function App({ Component, pageProps }: AppProps) {
 
     //TODO - the token should could as a param from onLogin
     headers.append('Authorization', 'Bearer ' + Cookies.get("tinacms-auth"))
-    return fetch('/api/preview', {
+    fetch('/api/preview', {
       method: 'POST',
       headers: headers,
+    }).then(() => {
+      window.location.href = '/'
     })
+
   }}
-  onLogout={() => alert("exit edit mode")}
+  onLogout={() => {console.log('exit edit mode')}}
 ><Component {...pageProps} />
 </TinacmsForestryProvider>
 }
@@ -45,7 +48,7 @@ export default function _App(props: any) {
       forestry: createClient(true),
     },
     sidebar: props.pageProps.preview,
-    enabled: true,
+    enabled: props.pageProps.preview,
   })
 
   return <TinaProvider cms={cms}><App {...props}/></TinaProvider>
