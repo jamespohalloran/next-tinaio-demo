@@ -2,11 +2,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
 
 ```bash
-npm run dev
-# or
+yarn install
+```
+
+then, run the development server:
+
+```bash
 yarn dev
 ```
 
@@ -14,14 +18,22 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-## Learn More
+## Tina.io
 
-To learn more about Next.js, take a look at the following resources:
+To enter edit-mode on this site, you can login through /login. Once you are logged in, any content from the site root will be loaded from tina.io. 
+The tina sidebar will also be visible. Any changes that are saved will go through Tina.io's API and create a new commit.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## What's happening under the hood?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+`yarn dev` is starting a graphql server, which is loading its content from the filesystem.
+When the user logs in to tina.io, it switches the site to [Preview-mode](https://nextjs.org/docs/advanced-features/preview-mode). This switches `getStaticProps` to load the data from tina.io's Content API.
+
+## Issues to be aware of
+
+The auth-token is currently stored on the backend as an http-only cookie within NextJS's preview data.
+Another copy is stored by the frontend in a non-http-only cookie, which is accessed by the frontend.
+
+This duplicate cookie causes production concerns around XSS, and can also lead to out-of-sync auth issues.
 
 ## Deploy on Vercel
 
