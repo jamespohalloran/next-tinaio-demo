@@ -43,10 +43,16 @@ When the user logs in to tina.io, it switches the site to [Preview-mode](https:/
 
 ## Issues to be aware of
 
+### Auth
+
 The auth-token is currently stored on the backend as an http-only cookie within NextJS's preview data.
 Another copy is stored by the frontend in a non-http-only cookie, which is accessed by the frontend.
-
 This duplicate cookie causes production concerns around XSS, and can also lead to out-of-sync auth issues.
+
+### Private npm packages
+
+This repo uses private npm packages. If you don't have access locally, let me know and i can grant access within npm.
+If you do have access and want to push to Vercel, you will need to an a `NPM_TOKEN` as an environment variable within Vercel.
 
 ## Deploy on Vercel
 
