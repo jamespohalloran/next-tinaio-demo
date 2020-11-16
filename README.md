@@ -20,7 +20,7 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 ## Tina.io
 
-To enter edit-mode on this site, you can login through /login. Once you are logged in, any content from the site root will be loaded from tina.io. 
+To enter edit-mode on this site, you can login through [/login](http://localhost:3000/login). Once you are logged in, any content from the [site root](http://localhost:3000/)'s content will be loaded from Tina.io. 
 The tina sidebar will also be visible. Any changes that are saved will go through Tina.io's API and create a new commit.
 
 ## What's happening under the hood?
