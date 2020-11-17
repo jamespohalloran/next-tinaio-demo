@@ -8,7 +8,7 @@ export default function Home(props) {
 
   useTinaAuthRedirect();
 
-  const data = props.preview ? useForestryForm<Home_Data>(props) : props.document.node.data ;
+  const { data } = props.preview ? useForestryForm<Home_Data>(props) : props.document.node.data ;
   return (
     <div className={styles.container}>
       <Head>
