@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@forestryio/cli": "^0.2.24",
-    "@forestryio/client": "^0.1.20",
+    "@forestryio/client": "^0.1.28",
     "@types/node": "^14.14.7",
     "@types/react": "^16.9.56",
     "http-proxy-middleware": "^1.0.6",
@@ -21,7 +21,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "styled-components": "^5.2.1",
-    "tinacms": "^0.32.0",
+    "tinacms": "^0.33.0",
     "typescript": "^4.0.5"
   }
 }
