@@ -3,12 +3,12 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import client from '../components/client';
 import { useForestryForm, useTinaAuthRedirect } from '@forestryio/client'
-import { DocumentUnion, Home_Data } from '../.tina/types'
+import { DocumentUnion, Home as HomeResponse } from '../.tina/types'
 export default function Home(props) {
 
   useTinaAuthRedirect();
 
-  const data = props.preview ? useForestryForm<Home_Data>(props) : props.document.node.data ;
+  const data = props.preview ? useForestryForm<HomeResponse>(props).data : props.document.node.data ;
   return (
     <div className={styles.container}>
       <Head>
