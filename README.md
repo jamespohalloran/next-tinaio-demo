@@ -10,7 +10,7 @@ NEXT_PUBLIC_TINA_CLIENT_ID=e0a42c05-26b6-41d4-9c80-f62c829aabd7
 ```
 
 `NEXT_PUBLIC_REALM_NAME` & `NEXT_PUBLIC_TINA_CLIENT_ID` can be retrieved by creating a realm/app within
-[Tina.io](https://auth.tinajs.dev/signin)
+[Tina.io](https://auth.tinajs.dev/signin).
 
 ## Getting Started
 
