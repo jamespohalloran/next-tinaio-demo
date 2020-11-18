@@ -5,7 +5,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 The following values will need to be set in your repo's `.env.local`
 
 ```
-NEXT_PUBLIC_HOMEPAGE_URL=http://localhost:3000/
 NEXT_PUBLIC_REALM_NAME=awko
 NEXT_PUBLIC_TINA_CLIENT_ID=e0a42c05-26b6-41d4-9c80-f62c829aabd7
 ```
