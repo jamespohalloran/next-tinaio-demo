@@ -1,4 +1,4 @@
 ---
-title: This is my page!123
+title: This is my page!
 ---
 
