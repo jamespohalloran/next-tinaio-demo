@@ -4,7 +4,7 @@ const client = (preview: boolean, getTokenFn?: () => string) => new ForestryClie
 {
   realm: process.env.NEXT_PUBLIC_REALM_NAME, 
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID, 
-  redirectURI: typeof window === 'undefined' ? '' : window.location.href, 
+  redirectURI: typeof window === 'undefined' ? '' : window.location.origin, 
   customAPI: preview ? undefined : DEFAULT_LOCAL_TINA_GQL_SERVER_URL,
   identityProxy: '/api/proxy',
   getTokenFn
