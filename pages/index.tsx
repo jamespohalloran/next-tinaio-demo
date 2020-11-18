@@ -9,6 +9,10 @@ export default function Home(props) {
   useTinaAuthRedirect();
 
   const data = props.preview ? useForestryForm<HomeResponse>(props).data : props.document.node.data ;
+
+  const missingEnv = [{key: "NEXT_PUBLIC_REALM_NAME", value: process.env.NEXT_PUBLIC_REALM_NAME },
+  {key: "NEXT_PUBLIC_TINA_CLIENT_ID", value: process.env.NEXT_PUBLIC_TINA_CLIENT_ID }].filter(env => !env.value)
+
   return (
     <div className={styles.container}>
       <Head>
@@ -21,11 +25,15 @@ export default function Home(props) {
           {data.title}
         </h1>
 
-        {!props.preview && <p className={styles.description}>
-          To make edits to site, sign in{' '}
-          <a href={"/login"}>here</a>
-        </p> }
-
+        <div className={styles.grid}>
+        { missingEnv.length ? 
+        <p>It looks like your site is missing the following environment variables:
+          <div className={styles.card}>{missingEnv.map(env => <><b>{env.key}</b><br/></>)}</div>
+        You will need to add these to login and make edits</p> : <>{!props.preview && <p className={styles.description}>
+        To make edits to site, sign in{' '}
+        <a href={"/login"}>here</a>
+      </p> }</>}
+      </div>
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h3>Documentation &rarr;</h3>
